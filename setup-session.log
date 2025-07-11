@@ -1,0 +1,47 @@
+# Install Python 3.12 using uv
+uv python install 3.12
+
+# Initialize a new project folder
+uv init my-new-project
+
+# Change directory to the project
+cd my-new-project
+
+# Create a virtual environment using Python 3.13 (note the version switch)
+uv venv --python 3.13
+
+# Activate the virtual environment
+source .venv/bin/activate
+
+# Add Flask
+uv add flask
+
+# Synchronize dependencies (probably to lock and install)
+uv sync
+
+# Add Pandas (looks like you did this during sync)
+uv sync
+
+# Remove Flask
+uv remove flask
+
+# Remove Flask again (safe to ignore)
+uv remove flask
+
+# Remove remaining dependencies (pandas and friends)
+uv remove flask   # (possibly repeated command, but it cleared remaining deps)
+
+# Run your main.py to test
+uv run main.py
+
+# Check which python interpreter is active
+which python3
+
+# Add pip explicitly
+uv add pip
+
+# List installed packages
+uv pip freeze
+
+# Exit the virtual environment
+exit
